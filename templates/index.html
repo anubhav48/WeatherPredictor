@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+</head>
+<style type="text/css">
+  input[type=text], input[type=password] {
+  width: 60%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 63.5%;
+  opacity: 0.9;
+}
+.container{
+margin-left:500px;
+margin-top:100px;}
+
+</style>
+<body>
+ <div class="container">
+	<h1 style="padding-left:150px;"><u>Rainfall Predictor</u></h1>
+       <form action="/predict" method="POST" >
+     <!-- Main Input For Receiving Query to our ML -->
+     <label for="Min Temprature"><b>Min Temprature</b></label><br>
+    <input type="text" placeholder="Enter minimum temprature" name="mintemprature" required><br>
+
+    <label for="Max Temprature"><b>Max Temprature</b></label><br>
+    <input type="text" placeholder="Enter maximum temprature" name="maxtemprature" required><br>
+
+    <label for="Rainfall"><b>Rainfall</b></label><br>
+    <input type="text" placeholder="Rainfall(in cm)" name="rainfall" required><br>
+    
+   
+    
+    
+		
+
+        <button type="submit" class="signupbtn">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   
+
+ </div>
+
+<h1 style="margin-left:305px;">{{ pred }}</h1>
+</body>
+</html>
